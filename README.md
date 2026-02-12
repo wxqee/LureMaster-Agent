@@ -108,12 +108,12 @@ uvicorn api.main:app --reload --host 0.0.0.0 --port 8000
 
 #### 通义千问（推荐）
 
-1. 访问 [阿里云 DashScope](https://dashscope.console.aliyun.com/apiKey)
+1. 访问 [阿里云百炼平台](https://bailian.console.aliyun.com/)
 2. 登录/注册阿里云账号
-3. 创建 API Key
-4. 将 Key 填入 `.env` 文件的 `DASHSCOPE_API_KEY`
+3. 开通"模型服务"，在左侧菜单找到「API-KEY管理」
+4. 创建 API Key，将 Key 填入 `.env` 文件的 `BAILIAN_API_KEY`
 
-**免费额度**：每月 100 万 tokens，足够个人使用
+**免费额度**：新用户赠送免费 tokens，Qwen-Turbo 百万 tokens 仅 0.3 元
 
 #### 智谱 GLM（备选）
 
@@ -347,7 +347,7 @@ curl "http://localhost:8000/api/fish-species"
 
 ## 🙏 致谢
 
-- [阿里云 DashScope](https://dashscope.console.aliyun.com/) - 通义千问 API
+- [阿里云百炼](https://bailian.console.aliyun.com/) - 通义千问 API
 - [智谱 AI](https://open.bigmodel.cn/) - GLM 模型
 - [DeepSeek](https://www.deepseek.com/) - DeepSeek 模型
 - [和风天气](https://www.qweather.com/) - 天气数据

@@ -1,5 +1,8 @@
 """
 通义千问 LLM 实现
+
+使用阿里云百炼平台的通义千问 API
+申请地址：https://bailian.console.aliyun.com/
 """
 from typing import List, Optional
 from .base import BaseLLM, Message
@@ -14,10 +17,10 @@ class QwenLLM(BaseLLM):
         初始化通义千问
         
         Args:
-            api_key: DashScope API Key
+            api_key: 阿里云百炼平台 API Key
         """
         settings = get_settings()
-        api_key = api_key or settings.dashscope_api_key
+        api_key = api_key or settings.bailian_api_key
         super().__init__(api_key=api_key, model_name="qwen-turbo")
         
         self._client = None
@@ -25,7 +28,7 @@ class QwenLLM(BaseLLM):
     
     def _check_availability(self):
         """检查 API 是否可用"""
-        if not self.api_key or self.api_key == "your_dashscope_key_here":
+        if not self.api_key or self.api_key == "your_bailian_key_here":
             self._is_available = False
             return
         

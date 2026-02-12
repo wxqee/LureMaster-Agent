@@ -10,7 +10,7 @@ class Settings(BaseSettings):
     """应用配置"""
     
     # LLM API Keys
-    dashscope_api_key: Optional[str] = None
+    bailian_api_key: Optional[str] = None  # 阿里云百炼平台（通义千问）
     zhipu_api_key: Optional[str] = None
     deepseek_api_key: Optional[str] = None
     

@@ -97,7 +97,7 @@ def check_environment():
         console.print("[yellow]   程序将以模拟模式运行，功能受限[/yellow]")
         console.print("")
         console.print("[cyan]请配置以下任一 API Key：[/cyan]")
-        console.print("  - 通义千问: https://dashscope.console.aliyun.com/apiKey")
+        console.print("  - 通义千问: https://bailian.console.aliyun.com/")
         console.print("  - 智谱 GLM: https://open.bigmodel.cn/api-keys")
         console.print("  - DeepSeek: https://platform.deepseek.com/api_keys")
         console.print("")
