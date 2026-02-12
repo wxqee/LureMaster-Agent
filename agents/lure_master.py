@@ -56,7 +56,7 @@ class LureMasterAgent(BaseAgent):
         Returns:
             Agent 回复
         """
-        # 记录用户消息
+        # 先记录用户消息，这样后续处理可以看到当前输入
         self.state.add_message("user", user_input)
         
         # 根据当前阶段处理
@@ -71,7 +71,7 @@ class LureMasterAgent(BaseAgent):
         else:
             response = self._handle_general(user_input)
         
-        # 记录 Agent 回复
+        # 记录助手回复
         self.state.add_message("assistant", response)
         
         return response
@@ -141,8 +141,8 @@ class LureMasterAgent(BaseAgent):
             self.state.current_stage = "collecting"
             return self._handle_collecting(user_input)
         else:
-            # 继续对话
-            return self._chat_with_llm(user_input)
+            # 继续对话，带上已收集的钓鱼计划上下文
+            return self._chat_with_context(user_input)
     
     def _handle_general(self, user_input: str) -> str:
         """处理一般对话"""
@@ -240,10 +240,16 @@ class LureMasterAgent(BaseAgent):
             missing_fields="、".join(missing_fields)
         )
         
-        messages = [
-            Message(role="system", content=self.system_prompt),
-            Message(role="user", content=prompt)
-        ]
+        # 构建增强的系统提示
+        enhanced_system = self.system_prompt + f"\n\n## 当前任务\n{prompt}"
+        
+        # 构建消息列表
+        messages = [Message(role="system", content=enhanced_system)]
+        
+        # 添加对话历史（已包含当前用户消息）
+        history = self.state.get_history(limit=10)
+        for msg in history:
+            messages.append(Message(role=msg["role"], content=msg["content"]))
         
         return self.llm.chat(messages)
     
@@ -328,22 +334,55 @@ class LureMasterAgent(BaseAgent):
             knowledge_info=knowledge_info,
         )
         
-        messages = [
-            Message(role="system", content=self.system_prompt),
-            Message(role="user", content=prompt)
-        ]
+        # 构建增强的系统提示
+        enhanced_system = self.system_prompt + f"\n\n## 当前任务\n请根据用户提供的钓鱼计划生成专业建议。\n\n{prompt}"
+        
+        # 构建消息列表
+        messages = [Message(role="system", content=enhanced_system)]
+        
+        # 添加对话历史（已包含当前用户消息）
+        history = self.state.get_history(limit=10)
+        for msg in history:
+            messages.append(Message(role=msg["role"], content=msg["content"]))
         
         return self.llm.chat(messages)
     
     def _chat_with_llm(self, user_input: str) -> str:
         """与 LLM 进行普通对话"""
-        history = self.state.get_history(limit=10)
+        # 构建消息列表
         messages = [Message(role="system", content=self.system_prompt)]
         
+        # 添加对话历史（已包含当前用户消息）
+        history = self.state.get_history(limit=10)
         for msg in history:
             messages.append(Message(role=msg["role"], content=msg["content"]))
         
-        messages.append(Message(role="user", content=user_input))
+        return self.llm.chat(messages)
+    
+    def _chat_with_context(self, user_input: str) -> str:
+        """带上下文的对话，保留已收集的钓鱼计划信息"""
+        # 构建增强的系统提示，包含已收集的信息
+        collected = self.state.collected_info
+        context_info = ""
+        
+        if collected:
+            context_parts = ["\n\n## 当前钓鱼计划信息"]
+            for key, value in collected.items():
+                if value and key not in ["weather", "knowledge"]:
+                    context_parts.append(f"- {key}: {value}")
+            if len(context_parts) > 1:
+                context_info = "\n".join(context_parts)
+                context_info += "\n\n请在回答时参考以上钓鱼计划信息，保持对话连贯性。"
+        
+        enhanced_system_prompt = self.system_prompt + context_info
+        
+        # 构建消息列表
+        messages = [Message(role="system", content=enhanced_system_prompt)]
+        
+        # 添加对话历史（已包含当前用户消息）
+        history = self.state.get_history(limit=10)
+        for msg in history:
+            messages.append(Message(role=msg["role"], content=msg["content"]))
         
         return self.llm.chat(messages)
     
