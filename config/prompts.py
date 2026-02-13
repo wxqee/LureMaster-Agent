@@ -30,27 +30,28 @@ SYSTEM_PROMPT = """你是【路亚钓鱼宗师】，一位拥有30年路亚钓�
 请用中文回答，语气亲切自然。"""
 
 # 信息收集提示词
-INFO_COLLECTION_PROMPT = """请分析用户的输入，提取以下信息（如果有的话）：
+INFO_COLLECTION_PROMPT = """请分析用户的输入，提取钓鱼相关信息。
 
 用户输入：{user_input}
 
 已知信息：
 {known_info}
 
-请以 JSON 格式返回提取的信息，格式如下：
-{{
-    "time": "钓鱼时间",
-    "location": "钓鱼地点",
-    "target_fish": "目标鱼种",
-    "equipment": "装备情况",
-    "companions": "钓友人数",
-    "missing_fields": ["缺失的必填字段列表"]
-}}
+请提取以下信息（如果用户提到的话）：
+- time: 钓鱼时间（如"明天早上"、"周六下午"）
+- location: 钓鱼地点（如"太湖"、"家门口的河"）
+- target_fish: 目标鱼种（如"鳜鱼"、"鲈鱼"）
+- equipment: 装备情况（如"MH调路亚竿"、"卡罗小组"）
+- companions: 钓友人数（数字）
 
-注意：
-1. 只返回 JSON，不要有其他内容
-2. 如果某个字段没有提到，设为 null
-3. 必填字段是 time 和 location"""
+只返回 JSON 格式，不要有其他内容：
+{{
+    "time": "提取的时间或 null",
+    "location": "提取的地点或 null",
+    "target_fish": "提取的鱼种或 null",
+    "equipment": "提取的装备或 null",
+    "companions": "提取的人数或 null"
+}}"""
 
 # 钓鱼建议生成提示词
 FISHING_ADVICE_PROMPT = """基于以下信息，给出专业的钓鱼建议：
@@ -79,12 +80,13 @@ FISHING_ADVICE_PROMPT = """基于以下信息，给出专业的钓鱼建议：
 请用亲切自然的语气回答，像老朋友聊天一样。"""
 
 # 追问提示词
-FOLLOW_UP_PROMPT = """用户想{user_intent}，但信息还不够完整。
+FOLLOW_UP_PROMPT = """用户想{user_intent}，但缺少关键信息。
 
 已知信息：
 {known_info}
 
 缺失的关键信息：{missing_fields}
 
-请用亲切的语气追问，最多问2个问题，帮助用户补充信息。
-问题要具体，便于用户回答。"""
+请用一句话简洁地追问缺失的信息，语气亲切自然，像朋友聊天一样。
+例如："明天几点出发？打算去哪个钓点？"
+不要解释太多，直接问即可。"""

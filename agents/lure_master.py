@@ -160,66 +160,25 @@ class LureMasterAgent(BaseAgent):
         return "general"
     
     def _extract_info(self, user_input: str) -> Dict[str, Any]:
-        """从用户输入中提取信息"""
-        result = {
-            "time": None,
-            "location": None,
-            "target_fish": None,
-            "equipment": None,
-            "companions": None,
-        }
+        """从用户输入中提取信息（使用 LLM 智能提取）"""
+        collected = self.state.collected_info
+        known_info = "\n".join([f"- {k}: {v}" for k, v in collected.items() if v])
         
-        # 时间提取
-        time_patterns = [
-            r"明天(早上|上午|下午|晚上|傍晚|清晨)?",
-            r"后天(早上|上午|下午|晚上|傍晚|清晨)?",
-            r"周末",
-            r"下(周|星期)",
-            r"(\d+)号",
-            r"(早上|上午|下午|晚上|傍晚|清晨|早起)",
-        ]
+        prompt = INFO_COLLECTION_PROMPT.format(
+            user_input=user_input,
+            known_info=known_info or "暂无"
+        )
         
-        for pattern in time_patterns:
-            match = re.search(pattern, user_input)
-            if match:
-                result["time"] = match.group()
-                break
+        try:
+            response = self.llm.chat([Message(role="user", content=prompt)])
+            json_match = re.search(r'\{[\s\S]*\}', response)
+            if json_match:
+                result = json.loads(json_match.group())
+                return {k: v for k, v in result.items() if v is not None and k != "missing_fields"}
+        except Exception as e:
+            pass
         
-        # 地点提取
-        location_patterns = [
-            r"去(.+?)钓",
-            r"在(.+?)钓",
-            r"到(.+?)钓",
-            r"(.+?)有(鱼|鳜鱼|鲈鱼|翘嘴)",
-            r"(太湖|阳澄湖|千岛湖|洞庭湖|水库|河|湖)",
-        ]
-        
-        for pattern in location_patterns:
-            match = re.search(pattern, user_input)
-            if match:
-                result["location"] = match.group(1) if match.lastindex else match.group()
-                break
-        
-        # 目标鱼种提取
-        fish_keywords = ["鳜鱼", "鲈鱼", "翘嘴", "黑鱼", "军鱼", "桂鱼", "白鱼"]
-        for fish in fish_keywords:
-            if fish in user_input:
-                result["target_fish"] = fish
-                break
-        
-        # 装备提取
-        equipment_keywords = ["路亚竿", "渔轮", "鱼竿", "竿子", "MH", "M调", "L调"]
-        for equip in equipment_keywords:
-            if equip in user_input:
-                result["equipment"] = equip
-                break
-        
-        # 人数提取
-        companions_match = re.search(r"(\d+)个?人", user_input)
-        if companions_match:
-            result["companions"] = int(companions_match.group(1))
-        
-        return result
+        return {}
     
     def _check_missing_fields(self) -> List[str]:
         """检查缺失的必填字段"""
