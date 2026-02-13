@@ -5,19 +5,20 @@
 import sys
 import os
 
-# 添加项目根目录到路径
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from rich.console import Console
 from rich.panel import Panel
 from rich.markdown import Markdown
-from rich.prompt import Prompt
+from rich.prompt import Prompt, Confirm
 from rich.table import Table
 from rich import print as rprint
 
 from agents import LureMasterAgent
 from llm import LLMFactory
 from config.settings import get_settings
+from skills import KnowledgeCollector, KnowledgeMerger, AutoCollector, format_collect_results
+from skills.browser_collector import BrowserCollector, check_playwright_available, format_browser_results
 
 
 console = Console()
@@ -59,7 +60,19 @@ def print_help():
 - `help` - 显示帮助信息
 - `status` - 查看当前对话状态
 - `reset` - 重置对话，开始新的计划
+- `/stats` - 查看知识库统计
+- `/collect <类型>` - 手动收集新知识（类型: fish/lure/rig/spot_type）
+- `/auto-collect <类型>` - 自动采集知识（纯 HTTP，可能被拦截）
+- `/browser-collect <类型>` - 浏览器模式采集（推荐，需要安装 Playwright）
+- `/save-knowledge <类型> <名称>` - 保存 AI 生成的知识到知识库
 - `quit` / `exit` - 退出程序
+
+## 智能知识生成
+
+当您查询的鱼种不在知识库中时，我会：
+1. 自动使用 AI 生成该鱼种的路亚钓鱼知识
+2. 在回复中标记「[AI生成]」
+3. 提示您可以使用 `/save-knowledge` 保存到知识库
 """
     console.print(Panel(Markdown(help_text), title="帮助", border_style="blue"))
 
@@ -118,13 +131,269 @@ def check_environment():
     return True
 
 
+def handle_collect_command():
+    """处理 /collect 命令"""
+    console.print("\n[cyan]请输入要收集的知识类型：[/cyan]")
+    console.print("  - fish: 鱼种")
+    console.print("  - lure: 路亚饵")
+    console.print("  - rig: 钓组")
+    console.print("  - spot_type: 标点类型")
+    
+    data_type = Prompt.ask("[bold green]类型[/bold green]").strip().lower()
+    
+    if data_type not in KnowledgeCollector.SUPPORTED_TYPES:
+        console.print(f"[red]不支持的类型: {data_type}[/red]")
+        return
+    
+    console.print(f"\n[cyan]请粘贴要提取的{KnowledgeCollector.TYPE_NAMES.get(data_type, data_type)}相关文本：[/cyan]")
+    console.print("[dim]（输入空行结束）[/dim]")
+    
+    lines = []
+    while True:
+        line = input()
+        if not line:
+            break
+        lines.append(line)
+    
+    text = "\n".join(lines)
+    if not text.strip():
+        console.print("[yellow]未输入任何内容[/yellow]")
+        return
+    
+    console.print("\n[cyan]正在提取知识...[/cyan]")
+    
+    try:
+        collector = KnowledgeCollector()
+        data = collector.collect(text, data_type)
+        
+        if not data:
+            console.print("[yellow]未能提取到有效数据[/yellow]")
+            return
+        
+        console.print(collector.format_output(data, data_type))
+        
+        if Confirm.ask("\n是否保存到知识库？"):
+            merger = KnowledgeMerger()
+            merger.backup()
+            success, msg = merger.merge(data, data_type, strategy="merge")
+            
+            if success:
+                console.print(f"[green]✓ {msg}[/green]")
+            else:
+                console.print(f"[yellow]{msg}[/yellow]")
+    
+    except Exception as e:
+        console.print(f"[red]处理失败: {e}[/red]")
+
+
+def handle_stats_command():
+    """处理 /stats 命令"""
+    try:
+        merger = KnowledgeMerger()
+        console.print(merger.format_stats())
+    except Exception as e:
+        console.print(f"[red]获取统计失败: {e}[/red]")
+
+
+def handle_auto_collect_command(args: str = ""):
+    """处理 /auto-collect 命令"""
+    parts = args.strip().split(maxsplit=1) if args else []
+    
+    if not parts:
+        console.print("\n[cyan]请输入要采集的知识类型：[/cyan]")
+        console.print("  - fish: 鱼种")
+        console.print("  - lure: 路亚饵")
+        console.print("  - rig: 钓组")
+        console.print("  - spot_type: 标点类型")
+        data_type = Prompt.ask("[bold green]类型[/bold green]").strip().lower()
+        keyword = ""
+    else:
+        data_type = parts[0].lower()
+        keyword = parts[1] if len(parts) > 1 else ""
+    
+    if data_type not in KnowledgeCollector.SUPPORTED_TYPES:
+        console.print(f"[red]不支持的类型: {data_type}[/red]")
+        return
+    
+    console.print("\n[cyan]请选择数据源：[/cyan]")
+    console.print("  - tieba: 百度贴吧（推荐，反爬较松）")
+    console.print("  - zhihu: 知乎（需要登录态，可能失败）")
+    console.print("  - fishing_home: 钓鱼之家")
+    source_name = Prompt.ask("[bold green]数据源[/bold green]", default="tieba").strip().lower()
+    
+    auto_save = Confirm.ask("\n是否自动保存到知识库？", default=False)
+    
+    debug_mode = Confirm.ask("是否开启调试模式？", default=False)
+    
+    console.print("\n[cyan]开始自动采集...[/cyan]")
+    console.print("[dim]这可能需要一些时间，请耐心等待...[/dim]")
+    console.print("[dim]已启用反爬措施：随机延迟、UA轮换、Cookie管理[/dim]")
+    
+    try:
+        collector = AutoCollector(debug=debug_mode)
+        
+        if keyword:
+            results, messages = collector.quick_collect(keyword, data_type, auto_save)
+        else:
+            results, messages = collector.collect_from_source(source_name, data_type, max_pages=2, auto_save=auto_save)
+        
+        console.print(format_collect_results(results, messages))
+        
+        stats = collector.get_stats()
+        console.print(f"\n[dim]请求统计: 总计 {stats['total']} 次, 成功 {stats['success']} 次, 失败 {stats['failed']} 次[/dim]")
+        
+        if results and not auto_save:
+            if Confirm.ask(f"\n发现 {len(results)} 条数据，是否保存到知识库？"):
+                merger = KnowledgeMerger()
+                merger.backup()
+                for data in results:
+                    success, msg = merger.merge(data, data_type, strategy="merge")
+                    console.print(f"  {msg}")
+    
+    except Exception as e:
+        console.print(f"[red]采集失败: {e}[/red]")
+
+
+def handle_browser_collect_command(args: str = ""):
+    """处理 /browser-collect 命令"""
+    available, message = check_playwright_available()
+    if not available:
+        console.print(f"\n[red]{message}[/red]")
+        return
+    
+    parts = args.strip().split(maxsplit=1) if args else []
+    
+    if not parts:
+        console.print("\n[cyan]请输入要采集的知识类型：[/cyan]")
+        console.print("  - fish: 鱼种")
+        console.print("  - lure: 路亚饵")
+        console.print("  - rig: 钓组")
+        console.print("  - spot_type: 标点类型")
+        data_type = Prompt.ask("[bold green]类型[/bold green]").strip().lower()
+        keyword = ""
+    else:
+        data_type = parts[0].lower()
+        keyword = parts[1] if len(parts) > 1 else ""
+    
+    if data_type not in KnowledgeCollector.SUPPORTED_TYPES:
+        console.print(f"[red]不支持的类型: {data_type}[/red]")
+        return
+    
+    console.print("\n[cyan]请选择数据源：[/cyan]")
+    console.print("  - tieba: 百度贴吧")
+    console.print("  - zhihu: 知乎")
+    console.print("  - fishing_home: 钓鱼之家")
+    source_name = Prompt.ask("[bold green]数据源[/bold green]", default="zhihu").strip().lower()
+    
+    headless = not Confirm.ask("\n是否显示浏览器窗口？", default=False)
+    auto_save = Confirm.ask("是否自动保存到知识库？", default=False)
+    debug_mode = Confirm.ask("是否开启调试模式？", default=False)
+    
+    console.print("\n[cyan]启动浏览器采集...[/cyan]")
+    console.print("[dim]这可能需要一些时间，请耐心等待...[/dim]")
+    if headless:
+        console.print("[dim]无头模式运行（后台）[/dim]")
+    else:
+        console.print("[dim]有头模式运行（可见浏览器窗口）[/dim]")
+    
+    try:
+        collector = BrowserCollector(headless=headless, debug=debug_mode)
+        
+        if keyword:
+            console.print("[yellow]浏览器模式暂不支持关键词搜索，将使用默认关键词[/yellow]")
+        
+        results, messages = collector.search_and_collect(source_name, data_type, max_pages=2, auto_save=auto_save)
+        
+        console.print(format_browser_results(results, messages))
+        
+        stats = collector.get_stats()
+        console.print(f"\n[dim]请求统计: 总计 {stats['total']} 次, 成功 {stats['success']} 次, 失败 {stats['failed']} 次[/dim]")
+        
+        if results and not auto_save:
+            if Confirm.ask(f"\n发现 {len(results)} 条数据，是否保存到知识库？"):
+                merger = KnowledgeMerger()
+                merger.backup()
+                for data in results:
+                    success, msg = merger.merge(data, data_type, strategy="merge")
+                    console.print(f"  {msg}")
+    
+    except Exception as e:
+        console.print(f"[red]浏览器采集失败: {e}[/red]")
+
+
+def handle_save_knowledge_command(agent: LureMasterAgent, data_type: str = "", name: str = ""):
+    """处理 /save-knowledge 命令 - 保存 LLM 生成的知识到知识库"""
+    if not data_type:
+        console.print("\n[cyan]请输入要保存的知识类型：[/cyan]")
+        console.print("  - fish: 鱼种")
+        console.print("  - lure: 路亚饵")
+        console.print("  - spot_type: 标点类型")
+        data_type = Prompt.ask("[bold green]类型[/bold green]").strip().lower()
+    
+    if data_type not in ["fish", "lure", "spot_type"]:
+        console.print(f"[red]不支持的类型: {data_type}[/red]")
+        return
+    
+    generated_knowledge = agent.state.generated_knowledge
+    
+    matching_items = []
+    for key, item in generated_knowledge.items():
+        if item["type"] == data_type:
+            matching_items.append(item)
+    
+    if not matching_items:
+        console.print(f"[yellow]当前会话中没有 AI 生成的 {data_type} 知识[/yellow]")
+        console.print("[dim]提示：当您查询知识库中不存在的鱼种时，AI 会自动生成相关知识[/dim]")
+        return
+    
+    if not name:
+        console.print(f"\n[cyan]当前会话中 AI 生成的 {data_type} 知识：[/cyan]")
+        for i, item in enumerate(matching_items, 1):
+            console.print(f"  {i}. {item['name']}")
+        
+        name = Prompt.ask("[bold green]请输入要保存的名称[/bold green]").strip()
+    
+    target_item = None
+    for item in matching_items:
+        if item["name"] == name or name in item["name"]:
+            target_item = item
+            break
+    
+    if not target_item:
+        console.print(f"[yellow]未找到「{name}」的生成知识[/yellow]")
+        return
+    
+    data = target_item["data"]
+    
+    console.print(f"\n[cyan]即将保存的知识：[/cyan]")
+    from skills import KnowledgeGenerator
+    generator = KnowledgeGenerator()
+    console.print(generator.format_output(data, data_type))
+    
+    if not Confirm.ask("\n确认保存到知识库？"):
+        console.print("[yellow]已取消[/yellow]")
+        return
+    
+    try:
+        merger = KnowledgeMerger()
+        merger.backup()
+        success, msg = merger.merge(data, data_type, strategy="merge")
+        
+        if success:
+            console.print(f"[green]✓ {msg}[/green]")
+            console.print("[dim]提示：保存的知识将在下次启动时生效[/dim]")
+        else:
+            console.print(f"[red]✗ {msg}[/red]")
+    except Exception as e:
+        console.print(f"[red]保存失败: {e}[/red]")
+
+
 def main():
     """主函数"""
     print_banner()
     check_environment()
     print_help()
     
-    # 初始化 Agent
     try:
         agent = LureMasterAgent()
         console.print("[green]✓ Agent 初始化成功[/green]")
@@ -138,7 +407,6 @@ def main():
     console.print("[dim]（输入 help 查看帮助，quit 退出）[/dim]")
     console.print("")
     
-    # 主循环
     while True:
         try:
             user_input = Prompt.ask("[bold green]您[/bold green]").strip()
@@ -146,7 +414,6 @@ def main():
             if not user_input:
                 continue
             
-            # 处理命令
             if user_input.lower() in ["quit", "exit", "q"]:
                 console.print("")
                 console.print("[bold cyan]感谢使用路亚钓鱼宗师！祝您爆护！🎣[/bold cyan]")
@@ -165,12 +432,45 @@ def main():
                 console.print("[green]✓ 对话已重置，请开始新的钓鱼计划[/green]")
                 continue
             
-            # 与 Agent 对话
+            elif user_input.lower() == "/stats":
+                handle_stats_command()
+                continue
+            
+            elif user_input.lower().startswith("/collect"):
+                parts = user_input.split(maxsplit=1)
+                if len(parts) > 1:
+                    data_type = parts[1].strip().lower()
+                    os.environ["COLLECT_TYPE"] = data_type
+                handle_collect_command()
+                continue
+            
+            elif user_input.lower().startswith("/auto-collect"):
+                parts = user_input.split(maxsplit=2)
+                args = parts[1] if len(parts) > 1 else ""
+                if len(parts) > 2:
+                    args += " " + parts[2]
+                handle_auto_collect_command(args)
+                continue
+            
+            elif user_input.lower().startswith("/browser-collect"):
+                parts = user_input.split(maxsplit=2)
+                args = parts[1] if len(parts) > 1 else ""
+                if len(parts) > 2:
+                    args += " " + parts[2]
+                handle_browser_collect_command(args)
+                continue
+            
+            elif user_input.lower().startswith("/save-knowledge"):
+                parts = user_input.split(maxsplit=2)
+                data_type = parts[1] if len(parts) > 1 else ""
+                name = parts[2] if len(parts) > 2 else ""
+                handle_save_knowledge_command(agent, data_type, name)
+                continue
+            
             console.print("")
             with console.status("[bold cyan]思考中...[/bold cyan]"):
                 response = agent.chat(user_input)
             
-            # 显示回复
             console.print(Panel(response, title="[bold yellow]路亚宗师[/bold yellow]", border_style="yellow"))
             console.print("")
             

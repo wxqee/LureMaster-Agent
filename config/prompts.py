@@ -90,3 +90,56 @@ FOLLOW_UP_PROMPT = """用户想{user_intent}，但缺少关键信息。
 请用一句话简洁地追问缺失的信息，语气亲切自然，像朋友聊天一样。
 例如："明天几点出发？打算去哪个钓点？"
 不要解释太多，直接问即可。"""
+
+# LLM 知识生成提示词（当知识库缺失时使用）
+FISH_KNOWLEDGE_GENERATION_PROMPT = """你是路亚钓鱼专家。请为【{fish_name}】生成专业的路亚钓鱼知识。
+
+请返回 JSON 格式（不要有其他内容）：
+{{
+    "name": "{fish_name}",
+    "aliases": ["别名1", "别名2"],
+    "habits": "生活习性描述（包括栖息水层、食性、活动规律）",
+    "best_season": ["适合的季节"],
+    "best_time": ["适合的时段"],
+    "lures": ["推荐的路亚饵1", "推荐的路亚饵2", "推荐的路亚饵3"],
+    "techniques": ["推荐钓法1", "推荐钓法2"],
+    "water_layer": "主要活动水层（底层/中下层/中层/中上层/表层/全水层）",
+    "difficulty": "作钓难度（简单/中等/困难）",
+    "tips": "作钓小技巧和注意事项"
+}}
+
+要求：
+1. 基于真实的路亚钓鱼知识，不要编造
+2. 如果不确定某些信息，可以填写合理的推测
+3. lures 和 techniques 至少提供 2-3 个选项"""
+
+# 路亚饵知识生成提示词
+LURE_KNOWLEDGE_GENERATION_PROMPT = """你是路亚钓鱼专家。请为【{lure_name}】生成专业的路亚饵知识。
+
+请返回 JSON 格式（不要有其他内容）：
+{{
+    "name": "{lure_name}",
+    "category": "分类（硬饵/软饵/金属饵/水面系）",
+    "description": "详细描述（外观、特点、用途）",
+    "target_fish": ["适合的鱼种1", "适合的鱼种2"],
+    "techniques": ["使用手法1", "使用手法2"],
+    "weight_range": "常用克重范围",
+    "best_season": ["适合季节"],
+    "best_time": ["适合时段"],
+    "difficulty": "使用难度（简单/中等/困难）",
+    "tips": "使用技巧和注意事项"
+}}"""
+
+# 标点类型知识生成提示词
+SPOT_TYPE_KNOWLEDGE_GENERATION_PROMPT = """你是路亚钓鱼专家。请为【{spot_type_name}】生成专业的标点类型知识。
+
+请返回 JSON 格式（不要有其他内容）：
+{{
+    "name": "{spot_type_name}",
+    "description": "标点特征描述",
+    "target_fish": ["该标点常见的鱼种"],
+    "techniques": ["推荐的作钓方式"],
+    "lures": ["推荐使用的路亚饵"],
+    "difficulty": "作钓难度（简单/中等/困难）",
+    "tips": "寻找和作钓技巧"
+}}"""

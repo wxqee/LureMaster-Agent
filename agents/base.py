@@ -16,6 +16,7 @@ class ConversationState:
     current_stage: str = "greeting"  # greeting / collecting / analyzing / advising
     created_at: datetime = field(default_factory=datetime.now)
     updated_at: datetime = field(default_factory=datetime.now)
+    generated_knowledge: Dict[str, Any] = field(default_factory=dict)  # 存储LLM生成的知识
     
     def add_message(self, role: str, content: str):
         """添加消息"""
@@ -30,6 +31,22 @@ class ConversationState:
         """更新收集的信息"""
         self.collected_info[key] = value
         self.updated_at = datetime.now()
+    
+    def add_generated_knowledge(self, knowledge_type: str, name: str, data: Dict[str, Any]):
+        """添加生成的知识"""
+        key = f"{knowledge_type}:{name}"
+        self.generated_knowledge[key] = {
+            "type": knowledge_type,
+            "name": name,
+            "data": data,
+            "timestamp": datetime.now().isoformat()
+        }
+        self.updated_at = datetime.now()
+    
+    def get_generated_knowledge(self, knowledge_type: str, name: str) -> Optional[Dict[str, Any]]:
+        """获取生成的知识"""
+        key = f"{knowledge_type}:{name}"
+        return self.generated_knowledge.get(key)
     
     def get_last_user_message(self) -> Optional[str]:
         """获取最后一条用户消息"""

@@ -8,6 +8,7 @@ from typing import Optional, Dict, Any, List
 from .base import BaseAgent, ConversationState
 from llm import LLMFactory, BaseLLM, Message
 from tools import ToolManager
+from skills import KnowledgeGenerator
 from config.prompts import (
     SYSTEM_PROMPT,
     INFO_COLLECTION_PROMPT,
@@ -23,10 +24,7 @@ class LureMasterAgent(BaseAgent):
     name = "lure_master"
     description = "路亚钓鱼宗师 - 专业的路亚钓鱼指导助手"
     
-    # 必填字段
     REQUIRED_FIELDS = ["time", "location"]
-    
-    # 可选字段
     OPTIONAL_FIELDS = ["target_fish", "equipment", "companions"]
     
     def __init__(self, llm: Optional[BaseLLM] = None):
@@ -42,8 +40,7 @@ class LureMasterAgent(BaseAgent):
         self.llm = llm or LLMFactory.get_first_available()
         self.tools = ToolManager()
         self.mock_mode = settings.mock_mode
-        
-        # 初始化系统提示
+        self.knowledge_generator = KnowledgeGenerator(self.llm)
         self.system_prompt = SYSTEM_PROMPT
     
     def chat(self, user_input: str) -> str:
@@ -225,22 +222,33 @@ class LureMasterAgent(BaseAgent):
             return {"error": result.error}
     
     def _get_knowledge_info(self, collected: Dict[str, Any]) -> Dict[str, Any]:
-        """获取知识库信息"""
+        """获取知识库信息，如果缺失则使用 LLM 生成"""
         knowledge = {}
         
-        # 获取目标鱼种信息
         target_fish = collected.get("target_fish")
         if target_fish:
             fish_info = self.tools.get_tool("knowledge").get_fish_info(target_fish)
             if fish_info:
                 knowledge["fish_info"] = fish_info
+                knowledge["fish_info_source"] = "knowledge_base"
+            else:
+                generated = self.state.get_generated_knowledge("fish", target_fish)
+                if generated:
+                    knowledge["fish_info"] = generated["data"]
+                    knowledge["fish_info_source"] = "llm_cached"
+                else:
+                    generated_info = self.knowledge_generator.generate_fish_knowledge(target_fish)
+                    if generated_info:
+                        knowledge["fish_info"] = generated_info
+                        knowledge["fish_info_source"] = "llm_generated"
+                        self.state.add_generated_knowledge("fish", target_fish, generated_info)
         
-        # 获取钓点信息
         location = collected.get("location")
         if location:
             spot_info = self.tools.get_tool("knowledge").get_spot_info(location)
             if spot_info:
                 knowledge["spot_info"] = spot_info
+                knowledge["spot_info_source"] = "knowledge_base"
         
         return knowledge
     
@@ -248,7 +256,6 @@ class LureMasterAgent(BaseAgent):
         """生成钓鱼建议"""
         collected = self.state.collected_info
         
-        # 格式化天气信息
         weather = collected.get("weather", {})
         weather_info = "暂无天气信息"
         if weather and "forecast" in weather:
@@ -259,22 +266,26 @@ class LureMasterAgent(BaseAgent):
                 )
             weather_info = "\n".join(forecast_lines)
             
-            # 添加钓鱼适宜度
             if "fishing_suitability" in weather:
                 suitability = weather["fishing_suitability"][0]
                 weather_info += f"\n\n钓鱼适宜度: {suitability['level']} ({suitability['score']}分)"
         
-        # 格式化知识库信息
         knowledge = collected.get("knowledge", {})
         knowledge_info = "暂无相关知识"
+        llm_generated_fish = None
+        
         if knowledge:
             lines = []
             if "fish_info" in knowledge:
                 fish = knowledge["fish_info"]
-                lines.append(f"目标鱼种: {fish['name']}")
+                source = knowledge.get("fish_info_source", "knowledge_base")
+                source_tag = " [AI生成]" if source in ["llm_generated", "llm_cached"] else ""
+                lines.append(f"目标鱼种: {fish['name']}{source_tag}")
                 lines.append(f"习性: {fish['habits']}")
                 lines.append(f"推荐饵: {', '.join(fish['lures'])}")
                 lines.append(f"推荐钓法: {', '.join(fish['techniques'])}")
+                if source == "llm_generated":
+                    llm_generated_fish = fish
             if "spot_info" in knowledge:
                 spot = knowledge["spot_info"]
                 lines.append(f"钓点: {spot['name']}")
@@ -282,7 +293,6 @@ class LureMasterAgent(BaseAgent):
                 lines.append(f"建议: {spot['tips']}")
             knowledge_info = "\n".join(lines)
         
-        # 生成建议
         prompt = FISHING_ADVICE_PROMPT.format(
             time=collected.get("time", "未指定"),
             location=collected.get("location", "未指定"),
@@ -293,18 +303,22 @@ class LureMasterAgent(BaseAgent):
             knowledge_info=knowledge_info,
         )
         
-        # 构建增强的系统提示
         enhanced_system = self.system_prompt + f"\n\n## 当前任务\n请根据用户提供的钓鱼计划生成专业建议。\n\n{prompt}"
         
-        # 构建消息列表
         messages = [Message(role="system", content=enhanced_system)]
         
-        # 添加对话历史（已包含当前用户消息）
         history = self.state.get_history(limit=10)
         for msg in history:
             messages.append(Message(role=msg["role"], content=msg["content"]))
         
-        return self.llm.chat(messages)
+        response = self.llm.chat(messages)
+        
+        if llm_generated_fish:
+            save_hint = f"\n\n---\n💡 知识库中暂无「{llm_generated_fish.get('name', '该鱼种')}」的资料，以上鱼种信息由 AI 生成。"
+            save_hint += "\n如需保存到知识库，请输入 `/save-knowledge fish {name}`".format(name=llm_generated_fish.get('name', ''))
+            response += save_hint
+        
+        return response
     
     def _chat_with_llm(self, user_input: str) -> str:
         """与 LLM 进行普通对话"""
