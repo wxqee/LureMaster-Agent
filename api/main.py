@@ -13,6 +13,7 @@ from agents import LureMasterAgent
 from llm import LLMFactory
 from tools import ToolManager
 from config.settings import get_settings
+from api.test_page import router as test_router
 
 
 # 创建 FastAPI 应用
@@ -30,6 +31,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.include_router(test_router, prefix="", tags=["测试页面"])
 
 # 会话存储（生产环境应使用 Redis 等）
 sessions: Dict[str, LureMasterAgent] = {}

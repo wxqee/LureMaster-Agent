@@ -17,7 +17,15 @@ from rich import print as rprint
 from agents import LureMasterAgent
 from llm import LLMFactory
 from config.settings import get_settings
-from skills import KnowledgeCollector, KnowledgeMerger, AutoCollector, format_collect_results
+from skills import (
+    KnowledgeCollector, 
+    KnowledgeMerger, 
+    AutoCollector, 
+    format_collect_results,
+    KnowledgeManager,
+    VectorStore,
+    check_vector_search_available
+)
 from skills.browser_collector import BrowserCollector, check_playwright_available, format_browser_results
 
 
@@ -65,6 +73,9 @@ def print_help():
 - `/auto-collect <类型>` - 自动采集知识（纯 HTTP，可能被拦截）
 - `/browser-collect <类型>` - 浏览器模式采集（推荐，需要安装 Playwright）
 - `/save-knowledge <类型> <名称>` - 保存 AI 生成的知识到知识库
+- `/feedback <类型> <名称> <good/bad>` - 对知识进行反馈
+- `/search <关键词>` - 语义搜索知识库
+- `/verify <类型> <名称>` - 验证知识（标记为已确认）
 - `quit` / `exit` - 退出程序
 
 ## 智能知识生成
@@ -73,6 +84,13 @@ def print_help():
 1. 自动使用 AI 生成该鱼种的路亚钓鱼知识
 2. 在回复中标记「[AI生成]」
 3. 提示您可以使用 `/save-knowledge` 保存到知识库
+
+## 知识质量
+
+知识库中的每条知识都有置信度和验证状态：
+- 置信度：根据来源自动设置（专家录入 > 手动录入 > 网页采集 > AI 生成）
+- 验证状态：可通过 `/verify` 命令标记为已验证
+- 用户反馈：可通过 `/feedback` 命令提交反馈，帮助改进知识质量
 """
     console.print(Panel(Markdown(help_text), title="帮助", border_style="blue"))
 
@@ -189,8 +207,14 @@ def handle_collect_command():
 def handle_stats_command():
     """处理 /stats 命令"""
     try:
-        merger = KnowledgeMerger()
-        console.print(merger.format_stats())
+        manager = KnowledgeManager()
+        console.print(manager.format_stats())
+        
+        low_confidence = manager.get_low_confidence_knowledge(threshold=0.8)
+        if low_confidence:
+            console.print(f"\n[yellow]⚠️  有 {len(low_confidence)} 条知识需要审核：[/yellow]")
+            for item in low_confidence[:5]:
+                console.print(f"  - {item['type']}/{item['name']} (置信度: {item['confidence']:.0%})")
     except Exception as e:
         console.print(f"[red]获取统计失败: {e}[/red]")
 
@@ -375,17 +399,149 @@ def handle_save_knowledge_command(agent: LureMasterAgent, data_type: str = "", n
         return
     
     try:
-        merger = KnowledgeMerger()
-        merger.backup()
-        success, msg = merger.merge(data, data_type, strategy="merge")
+        manager = KnowledgeManager()
+        manager.backup()
+        success, msg = manager.add_knowledge(
+            data, data_type, 
+            source="llm_generated",
+            verified=False
+        )
         
         if success:
             console.print(f"[green]✓ {msg}[/green]")
-            console.print("[dim]提示：保存的知识将在下次启动时生效[/dim]")
         else:
             console.print(f"[red]✗ {msg}[/red]")
     except Exception as e:
         console.print(f"[red]保存失败: {e}[/red]")
+
+
+def handle_feedback_command(data_type: str = "", name: str = "", feedback_type: str = ""):
+    """处理 /feedback 命令 - 提交知识反馈"""
+    if not data_type:
+        console.print("\n[cyan]请输入要反馈的知识类型：[/cyan]")
+        console.print("  - fish: 鱼种")
+        console.print("  - lure: 路亚饵")
+        console.print("  - spot_type: 标点类型")
+        data_type = Prompt.ask("[bold green]类型[/bold green]").strip().lower()
+    
+    if data_type not in ["fish", "lure", "spot_type"]:
+        console.print(f"[red]不支持的类型: {data_type}[/red]")
+        return
+    
+    if not name:
+        name = Prompt.ask("[bold green]请输入知识名称[/bold green]").strip()
+    
+    if not feedback_type:
+        console.print("\n[cyan]请选择反馈类型：[/cyan]")
+        console.print("  - good: 正面反馈（知识准确有用）")
+        console.print("  - bad: 负面反馈（知识有误或无用）")
+        feedback_type = Prompt.ask("[bold green]反馈类型[/bold green]", choices=["good", "bad"]).strip().lower()
+    
+    try:
+        manager = KnowledgeManager()
+        success, msg = manager.add_feedback(data_type, name, feedback_type == "good")
+        
+        if success:
+            console.print(f"[green]✓ {msg}[/green]")
+            console.print("[dim]感谢您的反馈，这将帮助我们改进知识质量！[/dim]")
+        else:
+            console.print(f"[red]✗ {msg}[/red]")
+    except Exception as e:
+        console.print(f"[red]反馈失败: {e}[/red]")
+
+
+def handle_search_command(query: str = ""):
+    """处理 /search 命令 - 语义搜索知识库"""
+    if not query:
+        query = Prompt.ask("[bold green]请输入搜索关键词[/bold green]").strip()
+    
+    if not query:
+        console.print("[yellow]请输入搜索关键词[/yellow]")
+        return
+    
+    available, msg = check_vector_search_available()
+    
+    if not available:
+        console.print(f"[yellow]{msg}[/yellow]")
+        console.print("[cyan]使用关键词搜索...[/cyan]")
+        
+        from tools import ToolManager
+        tools = ToolManager()
+        result = tools.run_tool("knowledge", query=query)
+        
+        if result.success and result.data:
+            console.print(f"\n[cyan]找到 {len(result.data)} 条相关知识：[/cyan]")
+            for item in result.data[:5]:
+                data = item.get("data", {})
+                console.print(f"  - {data.get('name', '未知')} ({item.get('category', '')})")
+        else:
+            console.print("[yellow]未找到相关知识[/yellow]")
+        return
+    
+    try:
+        vector_store = VectorStore()
+        results = vector_store.hybrid_search(query, top_k=5)
+        
+        if results:
+            console.print(f"\n[cyan]找到 {len(results)} 条相关知识：[/cyan]")
+            table = Table(show_header=True, header_style="bold magenta")
+            table.add_column("名称", style="cyan")
+            table.add_column("类型", style="green")
+            table.add_column("相关度", style="yellow")
+            table.add_column("来源", style="dim")
+            
+            for result in results:
+                meta = result.data.get("_meta", {})
+                source_map = {
+                    "expert": "专家录入",
+                    "manual": "手动录入",
+                    "collected": "网页采集",
+                    "llm_generated": "AI生成",
+                }
+                source = source_map.get(meta.get("source", ""), "未知")
+                score = f"{result.score:.0%}"
+                
+                table.add_row(
+                    result.data.get("name", "未知"),
+                    result.data_type,
+                    score,
+                    source
+                )
+            
+            console.print(table)
+        else:
+            console.print("[yellow]未找到相关知识[/yellow]")
+    except Exception as e:
+        console.print(f"[red]搜索失败: {e}[/red]")
+
+
+def handle_verify_command(data_type: str = "", name: str = ""):
+    """处理 /verify 命令 - 验证知识"""
+    if not data_type:
+        console.print("\n[cyan]请输入要验证的知识类型：[/cyan]")
+        console.print("  - fish: 鱼种")
+        console.print("  - lure: 路亚饵")
+        console.print("  - spot_type: 标点类型")
+        data_type = Prompt.ask("[bold green]类型[/bold green]").strip().lower()
+    
+    if data_type not in ["fish", "lure", "spot_type"]:
+        console.print(f"[red]不支持的类型: {data_type}[/red]")
+        return
+    
+    if not name:
+        name = Prompt.ask("[bold green]请输入知识名称[/bold green]").strip()
+    
+    try:
+        manager = KnowledgeManager()
+        success, msg = manager.verify_knowledge(data_type, name, verified_by="user")
+        
+        if success:
+            console.print(f"[green]✓ {msg}[/green]")
+            console.print("[dim]该知识已标记为已验证，置信度提升至 100%[/dim]")
+        else:
+            console.print(f"[red]✗ {msg}[/red]")
+    except Exception as e:
+        console.print(f"[red]验证失败: {e}[/red]")
 
 
 def main():
@@ -465,6 +621,27 @@ def main():
                 data_type = parts[1] if len(parts) > 1 else ""
                 name = parts[2] if len(parts) > 2 else ""
                 handle_save_knowledge_command(agent, data_type, name)
+                continue
+            
+            elif user_input.lower().startswith("/feedback"):
+                parts = user_input.split(maxsplit=3)
+                data_type = parts[1] if len(parts) > 1 else ""
+                name = parts[2] if len(parts) > 2 else ""
+                feedback_type = parts[3] if len(parts) > 3 else ""
+                handle_feedback_command(data_type, name, feedback_type)
+                continue
+            
+            elif user_input.lower().startswith("/search"):
+                parts = user_input.split(maxsplit=1)
+                query = parts[1] if len(parts) > 1 else ""
+                handle_search_command(query)
+                continue
+            
+            elif user_input.lower().startswith("/verify"):
+                parts = user_input.split(maxsplit=2)
+                data_type = parts[1] if len(parts) > 1 else ""
+                name = parts[2] if len(parts) > 2 else ""
+                handle_verify_command(data_type, name)
                 continue
             
             console.print("")

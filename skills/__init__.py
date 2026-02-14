@@ -8,6 +8,14 @@ from .knowledge_merger import KnowledgeMerger
 from .auto_collector import AutoCollector, format_collect_results
 from .browser_collector import BrowserCollector, check_playwright_available, format_browser_results
 from .knowledge_generator import KnowledgeGenerator
+from .knowledge_manager import (
+    KnowledgeManager, 
+    KnowledgeMeta, 
+    KnowledgeSource, 
+    KnowledgeStatus,
+    KnowledgeVersion
+)
+from .vector_store import VectorStore, SearchResult, check_vector_search_available
 
 __all__ = [
     "KnowledgeCollector", 
@@ -18,4 +26,12 @@ __all__ = [
     "check_playwright_available",
     "format_browser_results",
     "KnowledgeGenerator",
+    "KnowledgeManager",
+    "KnowledgeMeta",
+    "KnowledgeSource",
+    "KnowledgeStatus",
+    "KnowledgeVersion",
+    "VectorStore",
+    "SearchResult",
+    "check_vector_search_available",
 ]

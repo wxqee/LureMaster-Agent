@@ -190,7 +190,7 @@ class BrowserCollector:
             print(f"[DEBUG] 延迟 {delay:.2f} 秒...")
         time.sleep(delay)
     
-    def _human_like_scroll(self, page: Page):
+    def _human_like_scroll(self, page):
         """模拟人类滚动"""
         scroll_times = random.randint(2, 5)
         for _ in range(scroll_times):
@@ -198,7 +198,7 @@ class BrowserCollector:
             page.mouse.wheel(0, scroll_distance)
             time.sleep(random.uniform(0.3, 0.8))
     
-    def _human_like_mouse_move(self, page: Page, x: int, y: int):
+    def _human_like_mouse_move(self, page, x: int, y: int):
         """模拟人类鼠标移动"""
         current = page.evaluate("() => ({ x: window.mouseX || 0, y: window.mouseY || 0 })")
         steps = random.randint(10, 20)
@@ -367,7 +367,7 @@ class BrowserCollector:
         messages.append(f"统计: 请求 {self.request_count} 次，成功 {self.success_count} 次，失败 {self.fail_count} 次")
         return results, messages
     
-    def _extract_links(self, page: Page, base_url: str) -> List[str]:
+    def _extract_links(self, page, base_url: str) -> List[str]:
         """从页面中提取链接"""
         links = []
         
@@ -417,7 +417,7 @@ class BrowserCollector:
     
     def _collect_from_page(
         self,
-        parent_page: Page,
+        parent_page,
         url: str,
         data_type: str,
         auto_save: bool

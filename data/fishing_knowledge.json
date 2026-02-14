@@ -32,7 +32,23 @@
       ],
       "water_layer": "底层",
       "difficulty": "中等",
-      "tips": "鳜鱼喜欢有障碍物的区域，搜索时注意挂底。推荐使用防挂钓组。"
+      "tips": "鳜鱼喜欢有障碍物的区域，搜索时注意挂底。推荐使用防挂钓组。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.844963",
+        "updated_at": "2026-02-13T23:41:29.844984",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "鲈鱼",
@@ -66,7 +82,23 @@
       ],
       "water_layer": "全水层",
       "difficulty": "简单",
-      "tips": "鲈鱼是路亚入门首选鱼种，攻击欲望强，容易上钩。"
+      "tips": "鲈鱼是路亚入门首选鱼种，攻击欲望强，容易上钩。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.845099",
+        "updated_at": "2026-02-13T23:41:29.845106",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "翘嘴",
@@ -101,7 +133,23 @@
       ],
       "water_layer": "中上层",
       "difficulty": "中等",
-      "tips": "翘嘴喜欢追击，使用快速收线或抽停手法效果好。夜间用铅笔效果极佳。"
+      "tips": "翘嘴喜欢追击，使用快速收线或抽停手法效果好。夜间用铅笔效果极佳。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.845215",
+        "updated_at": "2026-02-13T23:41:29.845222",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "黑鱼",
@@ -132,7 +180,23 @@
       ],
       "water_layer": "表层/底层",
       "difficulty": "简单",
-      "tips": "黑鱼喜欢藏在水草中，用雷蛙在草洞搜索效果最好。听到水花声就可能有黑鱼。"
+      "tips": "黑鱼喜欢藏在水草中，用雷蛙在草洞搜索效果最好。听到水花声就可能有黑鱼。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.845324",
+        "updated_at": "2026-02-13T23:41:29.845331",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "军鱼",
@@ -165,7 +229,23 @@
       ],
       "water_layer": "中下层",
       "difficulty": "中等",
-      "tips": "军鱼力量大，中鱼后冲劲足，注意线组强度。在流水区域搜索效果好。"
+      "tips": "军鱼力量大，中鱼后冲劲足，注意线组强度。在流水区域搜索效果好。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.845425",
+        "updated_at": "2026-02-13T23:41:29.845432",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "红尾",
@@ -195,7 +275,23 @@
       ],
       "water_layer": "中下层",
       "difficulty": "中等",
-      "tips": "红尾喜欢流水，在河流的急流下方、水坝下游搜索效果好。"
+      "tips": "红尾喜欢流水，在河流的急流下方、水坝下游搜索效果好。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.845533",
+        "updated_at": "2026-02-13T23:41:29.845540",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "鳡鱼",
@@ -226,7 +322,23 @@
       ],
       "water_layer": "中上层",
       "difficulty": "困难",
-      "tips": "鳡鱼力量极大，需要重型装备。中鱼后不要急于收线，让它跑累了再抄。"
+      "tips": "鳡鱼力量极大，需要重型装备。中鱼后不要急于收线，让它跑累了再抄。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.845639",
+        "updated_at": "2026-02-13T23:41:29.845645",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "白鲦",
@@ -257,7 +369,23 @@
       ],
       "water_layer": "上层",
       "difficulty": "简单",
-      "tips": "白鲦是微物钓入门鱼种，用瓜子亮片效果最好。适合新手练手。"
+      "tips": "白鲦是微物钓入门鱼种，用瓜子亮片效果最好。适合新手练手。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.845741",
+        "updated_at": "2026-02-13T23:41:29.845748",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "马口",
@@ -287,7 +415,23 @@
       ],
       "water_layer": "中层",
       "difficulty": "简单",
-      "tips": "马口喜欢溪流环境，在石头周围活动。用微型米诺效果最好。"
+      "tips": "马口喜欢溪流环境，在石头周围活动。用微型米诺效果最好。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.845848",
+        "updated_at": "2026-02-13T23:41:29.845855",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "青梢",
@@ -316,7 +460,23 @@
       ],
       "water_layer": "中上层",
       "difficulty": "简单",
-      "tips": "青梢数量多，容易上钩，适合新手练手。"
+      "tips": "青梢数量多，容易上钩，适合新手练手。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.845950",
+        "updated_at": "2026-02-13T23:41:29.845956",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "青鱼",
@@ -348,7 +508,23 @@
       "difficulty": "中等",
       "tips": "青鱼对水质要求较高，应选择清澈且有丰富植被的水域。使用软饵时注意调整速度，避免过快导致青鱼不咬钩。作钓时需保持安静，防止惊扰鱼群。",
       "_generated": true,
-      "_source": "llm_generated"
+      "_source": "llm_generated",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.846054",
+        "updated_at": "2026-02-13T23:41:29.846061",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     }
   ],
   "lures": [
@@ -388,7 +564,23 @@
         "倒钓钓组"
       ],
       "price_range": "5-30元/包",
-      "tips": "软虫是最万能的路亚饵，适合新手入门。配合不同钓组可应对各种情况。"
+      "tips": "软虫是最万能的路亚饵，适合新手入门。配合不同钓组可应对各种情况。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.846160",
+        "updated_at": "2026-02-13T23:41:29.846167",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "米诺",
@@ -419,7 +611,23 @@
         "快抽"
       ],
       "price_range": "15-80元/个",
-      "tips": "米诺模拟小鱼，适合搜索中上层水域。抽停手法效果极佳。"
+      "tips": "米诺模拟小鱼，适合搜索中上层水域。抽停手法效果极佳。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.846258",
+        "updated_at": "2026-02-13T23:41:29.846264",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "铁板",
@@ -453,7 +661,23 @@
         "慢摇"
       ],
       "price_range": "5-30元/个",
-      "tips": "铁板抛投距离远，适合搜索大面积水域。性价比高，新手必备。"
+      "tips": "铁板抛投距离远，适合搜索大面积水域。性价比高，新手必备。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.846364",
+        "updated_at": "2026-02-13T23:41:29.846368",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "VIB",
@@ -484,7 +708,23 @@
         "匀速收线"
       ],
       "price_range": "10-50元/个",
-      "tips": "VIB震动大，诱鱼效果好。跳底时容易挂底，注意使用环境。"
+      "tips": "VIB震动大，诱鱼效果好。跳底时容易挂底，注意使用环境。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.846422",
+        "updated_at": "2026-02-13T23:41:29.846425",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "亮片",
@@ -515,7 +755,23 @@
         "慢速收线"
       ],
       "price_range": "3-20元/个",
-      "tips": "亮片性价比最高，适合新手。瓜子亮片适合微物钓。"
+      "tips": "亮片性价比最高，适合新手。瓜子亮片适合微物钓。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.846476",
+        "updated_at": "2026-02-13T23:41:29.846479",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "波趴",
@@ -544,7 +800,23 @@
         "慢速收线"
       ],
       "price_range": "15-60元/个",
-      "tips": "波趴在水面制造水花，视觉冲击力强。早晚效果最好。"
+      "tips": "波趴在水面制造水花，视觉冲击力强。早晚效果最好。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.846527",
+        "updated_at": "2026-02-13T23:41:29.846530",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "铅笔",
@@ -573,7 +845,23 @@
         "快抽"
       ],
       "price_range": "15-80元/个",
-      "tips": "铅笔在水面走Z字路线，夜间钓翘嘴效果极佳。"
+      "tips": "铅笔在水面走Z字路线，夜间钓翘嘴效果极佳。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.846582",
+        "updated_at": "2026-02-13T23:41:29.846585",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "雷蛙",
@@ -599,7 +887,23 @@
         "慢速收线"
       ],
       "price_range": "10-40元/个",
-      "tips": "雷蛙专门用于钓黑鱼，防挂性能好，可以在水草区自由搜索。"
+      "tips": "雷蛙专门用于钓黑鱼，防挂性能好，可以在水草区自由搜索。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.846635",
+        "updated_at": "2026-02-13T23:41:29.846638",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "摇摆饵",
@@ -627,7 +931,23 @@
         "触碰底部"
       ],
       "price_range": "15-60元/个",
-      "tips": "摇摆饵泳姿夸张，诱鱼效果好。适合搜索固定水层。"
+      "tips": "摇摆饵泳姿夸张，诱鱼效果好。适合搜索固定水层。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.846689",
+        "updated_at": "2026-02-13T23:41:29.846692",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "小胖子",
@@ -653,7 +973,23 @@
         "慢速收线"
       ],
       "price_range": "10-40元/个",
-      "tips": "小胖子泳姿夸张，鲈鱼特别喜欢。适合新手使用。"
+      "tips": "小胖子泳姿夸张，鲈鱼特别喜欢。适合新手使用。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.846748",
+        "updated_at": "2026-02-13T23:41:29.846751",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "复合亮片",
@@ -682,7 +1018,23 @@
         "跳底"
       ],
       "price_range": "15-50元/个",
-      "tips": "复合亮片震动大，噪音大，诱鱼效果好。适合搜索障碍区。"
+      "tips": "复合亮片震动大，噪音大，诱鱼效果好。适合搜索障碍区。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.846803",
+        "updated_at": "2026-02-13T23:41:29.846806",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "老鼠",
@@ -707,7 +1059,23 @@
         "慢速收线"
       ],
       "price_range": "15-50元/个",
-      "tips": "老鼠模拟水面老鼠，黑鱼特别喜欢。适合在草区边缘使用。"
+      "tips": "老鼠模拟水面老鼠，黑鱼特别喜欢。适合在草区边缘使用。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.846861",
+        "updated_at": "2026-02-13T23:41:29.846864",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "铁板VIB",
@@ -737,7 +1105,23 @@
         "慢速收线"
       ],
       "price_range": "5-25元/个",
-      "tips": "铁板VIB结合了铁板和VIB的优点，远投和诱鱼效果都好。"
+      "tips": "铁板VIB结合了铁板和VIB的优点，远投和诱鱼效果都好。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.846916",
+        "updated_at": "2026-02-13T23:41:29.846919",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "飞蝇钩",
@@ -761,7 +1145,23 @@
         "慢速收线"
       ],
       "price_range": "2-10元/个",
-      "tips": "飞蝇钩模拟昆虫，适合溪流微物钓。需要配合飞蝇竿使用。"
+      "tips": "飞蝇钩模拟昆虫，适合溪流微物钓。需要配合飞蝇竿使用。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.846970",
+        "updated_at": "2026-02-13T23:41:29.846973",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "泳姿饵",
@@ -788,7 +1188,23 @@
         "中速收线"
       ],
       "price_range": "20-80元/个",
-      "tips": "泳姿饵自带泳姿，收线即可。适合钓大鱼。"
+      "tips": "泳姿饵自带泳姿，收线即可。适合钓大鱼。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.847025",
+        "updated_at": "2026-02-13T23:41:29.847028",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     }
   ],
   "rigs": [
@@ -812,7 +1228,23 @@
       "advantages": "防挂性能好，适合重障碍区；泳姿自然；刺鱼有力",
       "disadvantages": "需要一定技巧判断鱼讯；铅头可能卡住",
       "difficulty": "中等",
-      "setup_tips": "钩尖藏在软虫体内，铅头朝前。铅头重量根据水深和饵重选择，一般5-14g。"
+      "setup_tips": "钩尖藏在软虫体内，铅头朝前。铅头重量根据水深和饵重选择，一般5-14g。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.847081",
+        "updated_at": "2026-02-13T23:41:29.847084",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "卡罗钓组",
@@ -834,7 +1266,23 @@
       "advantages": "搜索效率高；适合大范围搜索；铅和饵分离，泳姿自然",
       "disadvantages": "不适合重障碍区；容易挂底",
       "difficulty": "简单",
-      "setup_tips": "子弹铅在最前面，珠子在铅和钩之间，钩尖露出软虫。适合新手入门。"
+      "setup_tips": "子弹铅在最前面，珠子在铅和钩之间，钩尖露出软虫。适合新手入门。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.847142",
+        "updated_at": "2026-02-13T23:41:29.847146",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "倒钓钓组",
@@ -855,7 +1303,23 @@
       "advantages": "饵在铅上方，离底游动；适合精细作钓；鱼讯明显",
       "disadvantages": "抛投距离有限；容易缠线；需要技巧",
       "difficulty": "困难",
-      "setup_tips": "钩绑在线上，铅在最下方。饵离底一定高度游动。轻抖竿尖让饵晃动。"
+      "setup_tips": "钩绑在线上，铅在最下方。饵离底一定高度游动。轻抖竿尖让饵晃动。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.847198",
+        "updated_at": "2026-02-13T23:41:29.847202",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "无铅钓组",
@@ -876,7 +1340,23 @@
       "advantages": "泳姿最自然；下落速度慢；适合浅水",
       "disadvantages": "抛投距离有限；不适合深水",
       "difficulty": "简单",
-      "setup_tips": "只用钩和软虫，不加任何重量。让饵自然下落，适合浅水搜索。"
+      "setup_tips": "只用钩和软虫，不加任何重量。让饵自然下落，适合浅水搜索。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.847253",
+        "updated_at": "2026-02-13T23:41:29.847256",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "内德钓组",
@@ -896,7 +1376,23 @@
       "advantages": "站立姿态好；泳姿自然；适合深水",
       "disadvantages": "不适合软底；容易挂底",
       "difficulty": "简单",
-      "setup_tips": "蘑菇头铅让软虫站立在底部。轻抖竿尖让饵晃动。"
+      "setup_tips": "蘑菇头铅让软虫站立在底部。轻抖竿尖让饵晃动。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.847315",
+        "updated_at": "2026-02-13T23:41:29.847320",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "摇头钓组",
@@ -915,7 +1411,23 @@
       "advantages": "摇头动作诱鱼；适合底层搜索",
       "disadvantages": "容易挂底；不适合软底",
       "difficulty": "中等",
-      "setup_tips": "摇头铅让软虫在底部摇头晃脑。慢速拖动效果最好。"
+      "setup_tips": "摇头铅让软虫在底部摇头晃脑。慢速拖动效果最好。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.847372",
+        "updated_at": "2026-02-13T23:41:29.847376",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "浮水软虫钓组",
@@ -935,7 +1447,23 @@
       "advantages": "水面系效果；视觉冲击力强",
       "disadvantages": "抛投距离有限；只适合浅水",
       "difficulty": "简单",
-      "setup_tips": "浮水软虫浮在水面，慢速拖动制造水花。早晚效果最好。"
+      "setup_tips": "浮水软虫浮在水面，慢速拖动制造水花。早晚效果最好。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.847458",
+        "updated_at": "2026-02-13T23:41:29.847464",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "复合亮片钓组",
@@ -956,7 +1484,23 @@
       "advantages": "噪音大诱鱼效果好；防挂性能好；适合搜索",
       "disadvantages": "可能吓跑谨慎的鱼",
       "difficulty": "简单",
-      "setup_tips": "复合亮片自带软虫，也可以加装软虫。慢速收线触碰底部效果最好。"
+      "setup_tips": "复合亮片自带软虫，也可以加装软虫。慢速收线触碰底部效果最好。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.847559",
+        "updated_at": "2026-02-13T23:41:29.847623",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "雷蛙钓组",
@@ -976,7 +1520,23 @@
       "advantages": "防挂性能极佳；可以在重草区搜索；黑鱼特别喜欢",
       "disadvantages": "需要重型装备；刺鱼时机要求高",
       "difficulty": "中等",
-      "setup_tips": "用H调以上竿和粗线，雷蛙在草洞慢速拖动。看到黑鱼攻击后等2秒再扬竿！"
+      "setup_tips": "用H调以上竿和粗线，雷蛙在草洞慢速拖动。看到黑鱼攻击后等2秒再扬竿！",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.847791",
+        "updated_at": "2026-02-13T23:41:29.847812",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "飞蝇钓组",
@@ -998,7 +1558,23 @@
       "advantages": "最自然的呈现；适合溪流钓；微物钓首选",
       "disadvantages": "需要专门装备；学习曲线陡",
       "difficulty": "困难",
-      "setup_tips": "飞蝇钓需要专门学习。用飞蝇竿抛投，让飞蝇钩自然落在水面。"
+      "setup_tips": "飞蝇钓需要专门学习。用飞蝇竿抛投，让飞蝇钩自然落在水面。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.847930",
+        "updated_at": "2026-02-13T23:41:29.847937",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "铅头钩钓组",
@@ -1019,7 +1595,23 @@
       "advantages": "简单易用；泳姿自然；适合新手",
       "disadvantages": "容易挂底；不适合障碍区",
       "difficulty": "简单",
-      "setup_tips": "软虫套在铅头钩上，匀速收线或跳底。新手首选钓组。"
+      "setup_tips": "软虫套在铅头钩上，匀速收线或跳底。新手首选钓组。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.848034",
+        "updated_at": "2026-02-13T23:41:29.848038",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "咬铅钓组",
@@ -1040,7 +1632,23 @@
       "advantages": "重量可调；泳姿自然；简单易用",
       "disadvantages": "咬铅可能滑落；不适合深水",
       "difficulty": "简单",
-      "setup_tips": "咬铅夹在钩子上方，重量根据需要调整。适合浅水和中层搜索。"
+      "setup_tips": "咬铅夹在钩子上方，重量根据需要调整。适合浅水和中层搜索。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.848090",
+        "updated_at": "2026-02-13T23:41:29.848093",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     }
   ],
   "spot_types": [
@@ -1065,7 +1673,23 @@
         "秋": "鱼聚集在桥墩周围，各种饵都有效",
         "冬": "深水桥墩效果更好，鱼在深水区"
       },
-      "tips": "注意水流方向，鱼通常在背流面。桥墩周围容易挂底，用防挂钓组。"
+      "tips": "注意水流方向，鱼通常在背流面。桥墩周围容易挂底，用防挂钓组。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.848143",
+        "updated_at": "2026-02-13T23:41:29.848146",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "水坝",
@@ -1089,7 +1713,23 @@
         "秋": "鱼活跃，远投搜索效果好",
         "冬": "深水区效果更好"
       },
-      "tips": "水坝下游水流急，注意安全。用铁板和米诺远投搜索效果最好。"
+      "tips": "水坝下游水流急，注意安全。用铁板和米诺远投搜索效果最好。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.848197",
+        "updated_at": "2026-02-13T23:41:29.848201",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "河口",
@@ -1112,7 +1752,23 @@
         "秋": "鱼活跃，各种饵都有效",
         "冬": "深水区效果更好"
       },
-      "tips": "河口处水流和浑浊度变化大，根据情况选择饵和钓法。"
+      "tips": "河口处水流和浑浊度变化大，根据情况选择饵和钓法。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.848250",
+        "updated_at": "2026-02-13T23:41:29.848253",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "水草区",
@@ -1135,7 +1791,23 @@
         "秋": "水草开始枯萎，鱼在草边",
         "冬": "水草枯萎，效果一般"
       },
-      "tips": "水草区用雷蛙和防挂钓组。草洞是黑鱼的藏身之处。"
+      "tips": "水草区用雷蛙和防挂钓组。草洞是黑鱼的藏身之处。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.848305",
+        "updated_at": "2026-02-13T23:41:29.848308",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "倒树",
@@ -1158,7 +1830,23 @@
         "秋": "鱼聚集在倒树周围",
         "冬": "深水倒树效果更好"
       },
-      "tips": "倒树容易挂底，用防挂钓组。贴着结构搜索效果最好。"
+      "tips": "倒树容易挂底，用防挂钓组。贴着结构搜索效果最好。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.848363",
+        "updated_at": "2026-02-13T23:41:29.848366",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "石滩",
@@ -1181,7 +1869,23 @@
         "秋": "鱼活跃，各种饵都有效",
         "冬": "深水石滩效果更好"
       },
-      "tips": "石滩容易挂底，用防挂钓组。跳底时注意感觉底部。"
+      "tips": "石滩容易挂底，用防挂钓组。跳底时注意感觉底部。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.848418",
+        "updated_at": "2026-02-13T23:41:29.848421",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "深沟",
@@ -1204,7 +1908,23 @@
         "秋": "鱼在深沟觅食",
         "冬": "鱼在深沟越冬"
       },
-      "tips": "深沟是鱼类的迁徙通道，用铁板和米诺搜索效果最好。"
+      "tips": "深沟是鱼类的迁徙通道，用铁板和米诺搜索效果最好。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.848475",
+        "updated_at": "2026-02-13T23:41:29.848479",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "湾汊",
@@ -1227,7 +1947,23 @@
         "秋": "鱼在湾汊聚集",
         "冬": "深水湾汊效果更好"
       },
-      "tips": "湾汊是鱼类的觅食场所，用米诺和软虫搜索效果最好。"
+      "tips": "湾汊是鱼类的觅食场所，用米诺和软虫搜索效果最好。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.848527",
+        "updated_at": "2026-02-13T23:41:29.848530",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "码头",
@@ -1250,7 +1986,23 @@
         "秋": "鱼聚集在码头周围",
         "冬": "深水码头效果更好"
       },
-      "tips": "码头周围容易挂底，注意结构边缘。阴凉处是重点区域。"
+      "tips": "码头周围容易挂底，注意结构边缘。阴凉处是重点区域。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.848603",
+        "updated_at": "2026-02-13T23:41:29.848609",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "急流",
@@ -1273,7 +2025,23 @@
         "秋": "鱼活跃，各种饵都有效",
         "冬": "效果一般"
       },
-      "tips": "急流区域注意安全。逆流抛投，让饵顺流而下效果最好。"
+      "tips": "急流区域注意安全。逆流抛投，让饵顺流而下效果最好。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.848704",
+        "updated_at": "2026-02-13T23:41:29.848710",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "回水湾",
@@ -1296,7 +2064,23 @@
         "秋": "鱼聚集在回水湾",
         "冬": "深水回水湾效果更好"
       },
-      "tips": "回水湾是鱼类的休息场所，用米诺和软虫搜索效果最好。"
+      "tips": "回水湾是鱼类的休息场所，用米诺和软虫搜索效果最好。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.848850",
+        "updated_at": "2026-02-13T23:41:29.848860",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "涵洞",
@@ -1319,7 +2103,23 @@
         "秋": "鱼聚集在涵洞周围",
         "冬": "效果一般"
       },
-      "tips": "涵洞阴凉处是重点区域。用软虫跳底效果最好。"
+      "tips": "涵洞阴凉处是重点区域。用软虫跳底效果最好。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.848978",
+        "updated_at": "2026-02-13T23:41:29.848985",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "荷叶区",
@@ -1341,7 +2141,23 @@
         "秋": "荷叶开始枯萎",
         "冬": "荷叶枯萎，效果一般"
       },
-      "tips": "荷叶区用雷蛙在荷叶间隙搜索效果最好。看到水花就可能有黑鱼。"
+      "tips": "荷叶区用雷蛙在荷叶间隙搜索效果最好。看到水花就可能有黑鱼。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.851061",
+        "updated_at": "2026-02-13T23:41:29.851083",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "陡岸",
@@ -1364,7 +2180,23 @@
         "秋": "鱼聚集在陡岸",
         "冬": "深水陡岸效果更好"
       },
-      "tips": "陡岸是深浅交界处，用铁板和米诺贴岸搜索效果最好。"
+      "tips": "陡岸是深浅交界处，用铁板和米诺贴岸搜索效果最好。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.851247",
+        "updated_at": "2026-02-13T23:41:29.851255",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     }
   ],
   "fishing_spots": [
@@ -1385,7 +2217,23 @@
         "亮片",
         "VIB"
       ],
-      "best_time": "全年可钓，春秋最佳"
+      "best_time": "全年可钓，春秋最佳",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.851370",
+        "updated_at": "2026-02-13T23:41:29.851376",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "阳澄湖",
@@ -1403,7 +2251,23 @@
         "VIB",
         "米诺"
       ],
-      "best_time": "夏秋季节"
+      "best_time": "夏秋季节",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.851486",
+        "updated_at": "2026-02-13T23:41:29.851493",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "千岛湖",
@@ -1423,7 +2287,23 @@
         "亮片",
         "铅笔"
       ],
-      "best_time": "全年可钓"
+      "best_time": "全年可钓",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.851590",
+        "updated_at": "2026-02-13T23:41:29.851596",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "洞庭湖",
@@ -1442,7 +2322,23 @@
         "铅笔",
         "雷蛙"
       ],
-      "best_time": "夏秋季节"
+      "best_time": "夏秋季节",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.851696",
+        "updated_at": "2026-02-13T23:41:29.851703",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "鄱阳湖",
@@ -1460,7 +2356,23 @@
         "米诺",
         "亮片"
       ],
-      "best_time": "春秋季节"
+      "best_time": "春秋季节",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.852133",
+        "updated_at": "2026-02-13T23:41:29.852146",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "丹江口水库",
@@ -1478,7 +2390,23 @@
         "米诺",
         "VIB"
       ],
-      "best_time": "全年可钓"
+      "best_time": "全年可钓",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.852260",
+        "updated_at": "2026-02-13T23:41:29.852268",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "万峰湖",
@@ -1496,7 +2424,23 @@
         "米诺",
         "铅笔"
       ],
-      "best_time": "全年可钓"
+      "best_time": "全年可钓",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.852376",
+        "updated_at": "2026-02-13T23:41:29.852383",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "新安江",
@@ -1514,7 +2458,23 @@
         "亮片",
         "小克重铁板"
       ],
-      "best_time": "春夏秋三季"
+      "best_time": "春夏秋三季",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.852487",
+        "updated_at": "2026-02-13T23:41:29.852495",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     }
   ],
   "equipment": [
@@ -1527,7 +2487,23 @@
         "翘嘴",
         "军鱼"
       ],
-      "description": "适合软虫、小型米诺，手感灵敏，适合轻型作钓"
+      "description": "适合软虫、小型米诺，手感灵敏，适合轻型作钓",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.852599",
+        "updated_at": "2026-02-13T23:41:29.852605",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "type": "路亚竿",
@@ -1537,7 +2513,23 @@
         "军鱼",
         "红尾"
       ],
-      "description": "通用性强，适合大多数路亚饵，新手推荐"
+      "description": "通用性强，适合大多数路亚饵，新手推荐",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.859157",
+        "updated_at": "2026-02-13T23:41:29.859179",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "type": "路亚竿",
@@ -1547,7 +2539,23 @@
         "翘嘴",
         "军鱼"
       ],
-      "description": "适合硬饵、复合亮片，抛投距离远，手感适中"
+      "description": "适合硬饵、复合亮片，抛投距离远，手感适中",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.859376",
+        "updated_at": "2026-02-13T23:41:29.859388",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "type": "路亚竿",
@@ -1557,7 +2565,23 @@
         "鲈鱼",
         "重障碍区"
       ],
-      "description": "适合跳底、德州钓组，刺鱼有力，适合底层鱼类"
+      "description": "适合跳底、德州钓组，刺鱼有力，适合底层鱼类",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.859509",
+        "updated_at": "2026-02-13T23:41:29.859516",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "type": "路亚竿",
@@ -1567,7 +2591,23 @@
         "鳡鱼",
         "重障碍区"
       ],
-      "description": "适合雷蛙、重铅，强力刺鱼，适合大物和重障碍"
+      "description": "适合雷蛙、重铅，强力刺鱼，适合大物和重障碍",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.859620",
+        "updated_at": "2026-02-13T23:41:29.859627",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "type": "路亚竿",
@@ -1576,7 +2616,23 @@
         "鳡鱼",
         "大型鱼类"
       ],
-      "description": "适合大克重铁板，挑战大物专用"
+      "description": "适合大克重铁板，挑战大物专用",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.859743",
+        "updated_at": "2026-02-13T23:41:29.859750",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "type": "渔轮",
@@ -1585,7 +2641,23 @@
         "轻型作钓",
         "小饵"
       ],
-      "description": "适合轻型饵，手感好，适合精细作钓"
+      "description": "适合轻型饵，手感好，适合精细作钓",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.859849",
+        "updated_at": "2026-02-13T23:41:29.859856",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "type": "渔轮",
@@ -1593,7 +2665,23 @@
       "suitable_for": [
         "通用"
       ],
-      "description": "适合新手，操作简单，适合大多数饵，通用性强"
+      "description": "适合新手，操作简单，适合大多数饵，通用性强",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.859953",
+        "updated_at": "2026-02-13T23:41:29.859959",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "type": "渔轮",
@@ -1603,7 +2691,23 @@
         "大饵",
         "大物"
       ],
-      "description": "适合远投和大克重饵，线容量大"
+      "description": "适合远投和大克重饵，线容量大",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.860056",
+        "updated_at": "2026-02-13T23:41:29.860062",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "type": "渔轮",
@@ -1613,7 +2717,23 @@
         "重型饵",
         "鲈鱼"
       ],
-      "description": "抛投精准，适合有经验的钓友，适合重型饵"
+      "description": "抛投精准，适合有经验的钓友，适合重型饵",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.860159",
+        "updated_at": "2026-02-13T23:41:29.860165",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "type": "钓线",
@@ -1623,7 +2743,23 @@
         "翘嘴",
         "军鱼"
       ],
-      "description": "拉力强，线径细，适合远投"
+      "description": "拉力强，线径细，适合远投",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.863215",
+        "updated_at": "2026-02-13T23:41:29.863235",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "type": "钓线",
@@ -1633,7 +2769,23 @@
         "鳜鱼",
         "鲈鱼"
       ],
-      "description": "通用性强，适合大多数情况"
+      "description": "通用性强，适合大多数情况",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.863372",
+        "updated_at": "2026-02-13T23:41:29.863381",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "type": "钓线",
@@ -1643,7 +2795,23 @@
         "鳡鱼",
         "重障碍"
       ],
-      "description": "强力线，适合大物和重障碍区"
+      "description": "强力线，适合大物和重障碍区",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.863490",
+        "updated_at": "2026-02-13T23:41:29.863498",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "type": "前导线",
@@ -1651,7 +2819,23 @@
       "suitable_for": [
         "通用"
       ],
-      "description": "耐磨，防咬断，适合底层鱼类"
+      "description": "耐磨，防咬断，适合底层鱼类",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.863592",
+        "updated_at": "2026-02-13T23:41:29.863599",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "type": "前导线",
@@ -1660,7 +2844,23 @@
         "鳜鱼",
         "重障碍"
       ],
-      "description": "更耐磨，适合跳底和重障碍区"
+      "description": "更耐磨，适合跳底和重障碍区",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.863693",
+        "updated_at": "2026-02-13T23:41:29.863700",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     }
   ],
   "techniques": [
@@ -1677,7 +2877,23 @@
         "铁板"
       ],
       "difficulty": "中等",
-      "tips": "注意感觉底部，有轻微阻力就轻挑竿尖。有顿口信号立即扬竿刺鱼。"
+      "tips": "注意感觉底部，有轻微阻力就轻挑竿尖。有顿口信号立即扬竿刺鱼。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.863795",
+        "updated_at": "2026-02-13T23:41:29.863801",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "德州钓组",
@@ -1690,7 +2906,23 @@
         "软虫（面条虫、虾型）"
       ],
       "difficulty": "中等",
-      "tips": "让饵自然下沉到底，然后轻挑竿尖让饵跳动。感觉有鱼咬就扬竿。"
+      "tips": "让饵自然下沉到底，然后轻挑竿尖让饵跳动。感觉有鱼咬就扬竿。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.863893",
+        "updated_at": "2026-02-13T23:41:29.863900",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "水面系",
@@ -1707,7 +2939,23 @@
         "老鼠"
       ],
       "difficulty": "简单",
-      "tips": "早晚效果最好。看到鱼追饵不要急着收线，等鱼咬稳了再扬竿。"
+      "tips": "早晚效果最好。看到鱼追饵不要急着收线，等鱼咬稳了再扬竿。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.863999",
+        "updated_at": "2026-02-13T23:41:29.864006",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "匀速收线",
@@ -1724,7 +2972,23 @@
         "VIB"
       ],
       "difficulty": "简单",
-      "tips": "收线速度根据鱼活性调整。鱼活性高时快收，活性低时慢收。"
+      "tips": "收线速度根据鱼活性调整。鱼活性高时快收，活性低时慢收。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.864097",
+        "updated_at": "2026-02-13T23:41:29.864103",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "抽停",
@@ -1740,7 +3004,23 @@
         "VIB"
       ],
       "difficulty": "中等",
-      "tips": "抽动幅度不要太大，停顿时间2-3秒。停顿时常有鱼攻击。"
+      "tips": "抽动幅度不要太大，停顿时间2-3秒。停顿时常有鱼攻击。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.864193",
+        "updated_at": "2026-02-13T23:41:29.864199",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "name": "倒钓钓组",
@@ -1753,49 +3033,193 @@
         "小型软虫"
       ],
       "difficulty": "困难",
-      "tips": "适合鱼活性低时使用。轻抖竿尖让饵在原地晃动，不要大动作移动。"
+      "tips": "适合鱼活性低时使用。轻抖竿尖让饵在原地晃动，不要大动作移动。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.864282",
+        "updated_at": "2026-02-13T23:41:29.864288",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     }
   ],
   "weather_tips": [
     {
       "condition": "晴天",
       "suitability": "适宜",
-      "tips": "阳光充足时鱼会躲在阴凉处或深水，早晚在浅水活动。推荐早晚出钓。"
+      "tips": "阳光充足时鱼会躲在阴凉处或深水，早晚在浅水活动。推荐早晚出钓。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.864370",
+        "updated_at": "2026-02-13T23:41:29.864376",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "condition": "多云",
       "suitability": "极佳",
-      "tips": "光线柔和，鱼活动范围大，全天可钓。是路亚的好天气。"
+      "tips": "光线柔和，鱼活动范围大，全天可钓。是路亚的好天气。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.864460",
+        "updated_at": "2026-02-13T23:41:29.864467",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "condition": "小雨",
       "suitability": "适宜",
-      "tips": "小雨天气鱼活跃，水面有昆虫落入，鱼会到水面觅食。注意安全。"
+      "tips": "小雨天气鱼活跃，水面有昆虫落入，鱼会到水面觅食。注意安全。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.864557",
+        "updated_at": "2026-02-13T23:41:29.864564",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "condition": "大雨",
       "suitability": "不推荐",
-      "tips": "大雨影响视线和操作，不建议出钓。安全第一。"
+      "tips": "大雨影响视线和操作，不建议出钓。安全第一。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.864652",
+        "updated_at": "2026-02-13T23:41:29.864658",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "condition": "雷雨",
       "suitability": "禁止",
-      "tips": "雷雨天气绝对禁止出钓！碳纤竿导电，非常危险！"
+      "tips": "雷雨天气绝对禁止出钓！碳纤竿导电，非常危险！",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.864750",
+        "updated_at": "2026-02-13T23:41:29.864757",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "condition": "大风",
       "suitability": "不推荐",
-      "tips": "大风影响抛投和控饵，建议选择背风处或改期。"
+      "tips": "大风影响抛投和控饵，建议选择背风处或改期。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.864860",
+        "updated_at": "2026-02-13T23:41:29.864866",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "condition": "降温前",
       "suitability": "极佳",
-      "tips": "降温前气压变化，鱼会疯狂进食，是爆护的好时机！"
+      "tips": "降温前气压变化，鱼会疯狂进食，是爆护的好时机！",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.864960",
+        "updated_at": "2026-02-13T23:41:29.864966",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     },
     {
       "condition": "升温后",
       "suitability": "一般",
-      "tips": "升温后鱼可能不太活跃，建议选择早晚时段。"
+      "tips": "升温后鱼可能不太活跃，建议选择早晚时段。",
+      "_meta": {
+        "version": 1,
+        "created_at": "2026-02-13T23:41:29.865064",
+        "updated_at": "2026-02-13T23:41:29.865071",
+        "source": "manual",
+        "confidence": 0.9,
+        "verified": false,
+        "verified_by": null,
+        "verified_at": null,
+        "feedback_count": 0,
+        "positive_feedback": 0,
+        "negative_feedback": 0,
+        "status": "active",
+        "parent_version": null,
+        "tags": []
+      }
     }
   ]
 }

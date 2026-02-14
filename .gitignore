@@ -151,9 +151,22 @@ temp/
 # 本地配置
 local_settings.py
 
+# 知识库备份
+data/fishing_knowledge.backup_*.json
+data/knowledge_versions.json
+data/vector_index.json
+backups/
+
 # 知识库缓存
 data/cache/
 *.vectorstore/
 
+# Playwright 浏览器数据
+.playwright/
+ms-playwright/
+
 # 会话数据
 sessions/
+
+# LLM 缓存
+.llm_cache/
